@@ -6,7 +6,7 @@ import { AuthService } from '../../core/auth.service';
 @Component({
   selector: 'onepage',
   templateUrl: './onepage.component.html',
-  styleUrls: ['./onepage.component.css']
+  styleUrls: ['./onepage.component.css'],
   providers: [AuthService]
 })
 export class OnepageComponent implements OnInit {

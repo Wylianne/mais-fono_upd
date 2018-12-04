@@ -3,7 +3,7 @@ import { User } from '../../../../../models/user';
 import { UserService } from '../../../../../services/user.service';
 import { Router } from '@angular/router';
 import { ConfirmDialogComponent } from '../../../../../confirm-dialog/confirm-dialog.component';
-import { LoadComponent } from '../../../../../load/load.component';
+//import { LoadComponent } from '../../../../../load/load.component';
 
 declare var $:any;
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from '../../../core/auth.service';
 import { Menu } from '../../../role-menu/menu';
 import { MENU } from '../../../models/menus';
@@ -17,6 +17,7 @@ export class LeftSideComponent implements OnInit {
 
   public auth2: any;
 
+  @Input()
   menus: Menu[];
 
   constructor(public auth: AuthService) { }
