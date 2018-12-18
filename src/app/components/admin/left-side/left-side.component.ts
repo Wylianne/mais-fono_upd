@@ -14,11 +14,8 @@ declare const gapi: any;
 export class LeftSideComponent implements OnInit {
   img: String;
   name: String;
-
-  public auth2: any;
-
-  @Input()
   menus: Menu[];
+  public auth2: any;
 
   constructor(public auth: AuthService) { }
 
@@ -28,6 +25,8 @@ export class LeftSideComponent implements OnInit {
           this.img = user.photoURL;
           this.name = user.displayName;
           this.menus = MENU;
+
+          console.log(this.menus);
       })
   }
 

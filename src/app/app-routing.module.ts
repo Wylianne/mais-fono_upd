@@ -67,8 +67,9 @@ const routes: Routes = [
   },
 
 
-
     {path: 'sistema', component: AdminComponent, children: [
+        
+       
         { path: 'user',children:[
             {path: 'atualizar',component:UserUpdateComponent, canActivate:[AdminGuard]},
             {path: 'admin',component:UserAdminComponent, canActivate:[AdminGuard]},
@@ -86,7 +87,7 @@ const routes: Routes = [
             //]},
             //{path: 'paciente', component: PacienteComponent, children: [
             {path: 'consultarPacientes', component: ConsultaComponent, canActivate: [FonoGuard]},
-            {path: 'consultarMeus', component: ConsultarMeusComponent, canActivate: [FonoGuard]},
+            {path: 'consultarMeus', component: ConsultarMeusComponent, canActivate: [FonoGuard, AdminGuard]},
             {path: 'evolucao/:id', component: PacienteEvolucaoComponent, canActivate: [FonoGuard]},
             {path: 'laudo/:id', component: PacienteLaudoComponent, canActivate: [FonoGuard]},
             {path: 'novo', component: PacienteFormComponent, canActivate: [FonoGuard]},

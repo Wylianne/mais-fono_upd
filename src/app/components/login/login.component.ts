@@ -1,11 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from "@angular/router";
+import { AuthService } from './../../core/auth.service';
 import { } from 'jquery';
 import { } from 'icheck';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [AuthService]
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
@@ -13,7 +16,19 @@ export class LoginComponent implements OnInit, OnDestroy {
   body: HTMLBodyElement = document.getElementsByTagName('body')[0];
   checkbox_icheck: HTMLElement = document.getElementById('checkbox_icheck');
 
-  constructor() { }
+  constructor(public auth: AuthService, private router: Router) { }
+ 
+ 
+  login(){
+    this.auth.googleLogin().then(
+      () => {
+        console.log("Login")
+        this.router.navigate(['/sistema/dash'])
+      } 
+    ).catch(error =>{
+        console.log(error)
+      } )
+  }
 
   ngOnInit() {
     // add the the body classes

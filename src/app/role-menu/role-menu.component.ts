@@ -24,7 +24,7 @@ export class RoleMenuComponent implements OnInit {
     this.auth.user.subscribe(
       user=> {
         this.selectMenus=[];
-        this.roles = ["fono"]
+        this.roles = user.roles; //array
       
         this.menus.forEach(element => {
           if(this.roles.includes(element.role) || element.role == CUSTOM ){
